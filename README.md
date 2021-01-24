@@ -1,2 +1,2 @@
 # Snake-Game-
-This game is made by using the Pygame Library of Python.
+These are my variants of making a classic Snake game.
