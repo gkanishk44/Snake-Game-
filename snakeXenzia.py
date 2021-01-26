@@ -16,6 +16,7 @@ blue = (0,0,255)
 black = (0,0,0)
 
 
+
 clock = pygame.time.Clock()
 surface = pygame.display.set_mode((H,W))
         
@@ -34,13 +35,13 @@ def message_display(text):
 	pygame.display.update()
 
 def crash():
-	surface.fill(white)
+	surface.fill(green)
 	message_display("You've Crashed")
 	time.sleep(1.5)
-	surface.fill(white)
+	surface.fill(green)
 	message_display("Score:"+ str(score))
 	time.sleep(2)
-	surface.fill(white)
+	surface.fill(green)
 
 
 def game_loop():
@@ -59,7 +60,7 @@ def game_loop():
 
 	while not crashed:
 
-		surface.fill(white)
+		surface.fill(green)
 		for i in range(1,len(snake_position)):
 			pygame.draw.circle(surface, red, snake_position[i], 10)
 		pygame.draw.circle(surface, black, snake_position[0], 10)
@@ -85,12 +86,11 @@ def game_loop():
 					y_change = change
 					x_change = 0	
 
-		
+			
 
 		x = x + x_change
 		y = y + y_change
 		if x>surface.get_width() or x<0 or y>surface.get_height() or y<0: 
-      
 			crashed = True
 			crash()
 
@@ -98,7 +98,7 @@ def game_loop():
 			crashed = True
 			crash()
 
-		if math.sqrt(((x-X)*2)+((y -Y)*2)) <= 15  :
+		if math.sqrt(((x-X)**2)+((y -Y)**2)) <= 15  :
 			X = random.randrange(10,495,10)
 			Y = random.randrange(10,495,10)
 			Score+=1
@@ -133,9 +133,9 @@ def game_start():
 				x_down,y_down = event.pos
 				if 300>x_down>200 and 300>y_down>250:
 					game_loop()
-		
+			#print(event)
 
-		surface.fill(white)
+		surface.fill(blue)
 		largeText = pygame.font.Font("freesansbold.ttf", 50)
 		TextSurf, TextRect = tex_object("SNAKE XENZIA", largeText)
 		TextRect.center = ((surface.get_height()/2), (surface.get_width()/3))
