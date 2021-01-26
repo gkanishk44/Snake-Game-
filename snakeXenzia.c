@@ -192,24 +192,7 @@ void move(){
     
     a[f.x][f.y] = 'O';
 
-  //  for(int i = 0; i <= len; i++)
-   //     printf("\n%d. %d %d %c", i, s[i].x, s[i].y, a[s[i].x][s[i].y]);
-    
-    
-    
-   /* a[tail.x][tail.y] = ' ';
-    
-    if(a[tail.x][tail.y-1] == 'o')
-        tail.y--;
-    
-    else if(a[tail.x-1][tail.y] == 'o')
-        tail.x--;
-    
-    else if(a[tail.x+1][tail.y] == 'o')
-        tail.x++;
-    
-    else if(a[tail.x][tail.y+1] == 'o')
-        tail.y++;*/
+ 
 }
 
 
